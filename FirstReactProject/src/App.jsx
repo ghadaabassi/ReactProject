@@ -24,6 +24,8 @@ function App() {
         <li>Hi</li>
       </ul>
 
+      <input type='text' id="search"/>  
+
 
     </>
   )
