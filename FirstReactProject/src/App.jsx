@@ -38,7 +38,8 @@ function App() {
   return (
     <>
       <h1>React {getTitle("Project")}</h1>
-     
+      <label htmlFor='title'>Write Somthing here :</label>
+      <input id='title' type='text'/>
        <ul>
         {
           list.map(function (item) {return <li key={item.objectID}>{item.title}
