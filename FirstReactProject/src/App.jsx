@@ -11,6 +11,26 @@ function App() {
     title:"React",
   }
 
+  const list=[
+{
+  title:"React",
+  url:"http://reactjs.org/",
+  points:4,
+  objectID:0,
+  num_coments:3,
+},
+{
+  title:"Redux",
+  url:"http://reduxjs.org/",
+  num_coments:2,
+  points:5,
+  objectID:1,
+ 
+}
+
+
+  ]
+
   function getTitle(title){
     return title;
   }
@@ -18,15 +38,22 @@ function App() {
   return (
     <>
       <h1>React {getTitle("Project")}</h1>
-      <img src='https://www.purina.co.uk/sites/default/files/2020-12/Cat%20Hunting%20BehavioursHERO.jpg' alt="catphoto" className='image'/>
-      <ul>
-        <li>Hy</li>
-        <li>Hi</li>
-      </ul>
-
-      <input type='text' id="search"/>  
-
-
+     
+       <ul>
+        {
+          list.map(function (item) {return <li key={item.objectID}>{item.title}
+          <span><br/>
+            <a href={item.url}>{item.title}</a>
+          </span><br/>
+          <span><b>Points:  </b>{item.points}</span>
+          
+          
+          </li>; })
+        }
+       </ul>
+   
+      
+     
     </>
   )
 }
