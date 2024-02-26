@@ -10,7 +10,7 @@ function App() {
     greeting:"Hey",
     title:"React",
   }
-
+const numbers=[1,2,3,4,5]
   const list=[
 {
   title:"React",
@@ -25,10 +25,7 @@ function App() {
   num_coments:2,
   points:5,
   objectID:1,
- 
 }
-
-
   ]
 
   function getTitle(title){
@@ -48,9 +45,17 @@ function App() {
           </span><br/>
           <span><b>Points:  </b>{item.points}</span>
           
-          
           </li>; })
         }
+       </ul>
+
+       <ul>
+        {   numbers.filter(function (item) {
+          
+          return <li > {item % 2==0} <br/></li>; })
+        }
+
+
        </ul>
    
       
