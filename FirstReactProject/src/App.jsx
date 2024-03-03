@@ -32,13 +32,48 @@ const carcters=["d","a","a","e","a","e"]
 }
   ]
 
+
+  const students=[
+    {
+      id:0,
+      name:"stud1",
+      grade:3,
+    },
+    {
+      id:1,
+      name:"stud2",
+      grade:13,
+    },
+    {
+      id:2,
+      name:"stud3",
+      grade:17,
+    },
+    {
+      id:3,
+      name:"stud4",
+      grade:20,
+    },
+    {
+      id:4,
+      name:"stud4",
+      grade:12,
+    },
+      ]
+
+//Functions
   function getTitle(title){
     return title;
   }
-  const filteredNames = names.filter(name => name.length < 4);
 
+// Filters
+
+  const filteredNames = names.filter(name => name.length < 4);
   const PositiveNumbers = numbers.filter(nmbr => nmbr>= 0);
+  const filtredStudents = students.filter(gr => gr.grade>= 15);
   
+
+
   return (
     <>
       <h1>React {getTitle("Project")}</h1>
@@ -74,6 +109,15 @@ const carcters=["d","a","a","e","a","e"]
          /*Filtred Numbers */
          PositiveNumbers.map(filteredNumber => (
         <li key={filteredNumber}>{filteredNumber}</li>
+        ))}
+        </li>
+
+        <li>
+          <h3>students</h3>
+        {
+         /*Filtred Students */
+         filtredStudents.map(std => (
+        <li key={std}>{std.name}</li>
         ))}
         </li>
         </ul>
