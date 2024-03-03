@@ -10,10 +10,10 @@ function App() {
     greeting:"Hey",
     title:"React",
   }
-const numbers=[5,-2,-7,1,2,3,4,5]
+const numbers=[5,-2,-3,1,2,3,4,6]
 
 const names=["Ghada","Aya","Salah","Amine","Jack","Emilie"]
-const carcters=["d","a","a","e","a","e"]
+const crt=["d","d","a","e","a","e","c","s","c","e","f","m","s","f"]
 
   const list=[
 {
@@ -81,6 +81,17 @@ const carcters=["d","a","a","e","a","e"]
     return accumulator * currentValue;
   }, 1);  
 
+  const occ= crt.reduce((accumulator, currentValue) => {
+    if(accumulator[currentValue]){
+      accumulator[currentValue]++;
+    }
+    else{
+      accumulator[currentValue]=1;
+    }
+    return accumulator;
+  }, {});  
+
+
   return (
     <>
       <h1>React {getTitle("Project")}</h1>
@@ -95,7 +106,7 @@ const carcters=["d","a","a","e","a","e"]
             <a href={item.url}>{item.title}</a>
           </span><br/>
           <span><b>Points:  </b>{item.points}</span>
-          </li>; })
+          </li> })
         }
        </ul>
  
@@ -124,7 +135,7 @@ const carcters=["d","a","a","e","a","e"]
         {
          /*Filtred Students */
          filtredStudents.map(std => (
-        <li key={std}>{std.name}</li>
+        <li key={std.id}>{std.name}</li>
         ))}
         </li>
         </ul>
@@ -132,6 +143,16 @@ const carcters=["d","a","a","e","a","e"]
           <h2>Reduce</h2>
           <span>Somme de nombres {sum}</span><br/>
           <span>Produit de nombres {product}</span>
+
+
+          <h3>Occurence</h3>        
+         {/*Reduce Occurence*/
+        Object.entries(occ).map(([element, count]) => (
+          <li key={element}>
+            {element}: {count}
+          </li>
+        ))}
+        
           
         </ul>
 
