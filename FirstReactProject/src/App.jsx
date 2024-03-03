@@ -11,6 +11,10 @@ function App() {
     title:"React",
   }
 const numbers=[1,2,3,4,5]
+
+const names=["Ghada","Aya","Salah","Amine","Jack","Emilie"]
+const carcters=["d","a","a","e","a","e"]
+
   const list=[
 {
   title:"React",
@@ -31,6 +35,7 @@ const numbers=[1,2,3,4,5]
   function getTitle(title){
     return title;
   }
+  const filteredNames = names.filter(name => name.length < 4);
   
   return (
     <>
@@ -38,27 +43,26 @@ const numbers=[1,2,3,4,5]
       <label htmlFor='title'>Write Somthing here :</label>
       <input id='title' type='text'/>
        <ul>
+        <h2>Mapping</h2>
         {
+           /*Mapping */
           list.map(function (item) {return <li key={item.objectID}>{item.title}
           <span><br/>
             <a href={item.url}>{item.title}</a>
           </span><br/>
           <span><b>Points:  </b>{item.points}</span>
-          
           </li>; })
         }
        </ul>
-
-       <ul>
-        {   numbers.filter(function (item) {
-          
-          return <li > {item % 2==0} <br/></li>; })
-        }
-
-
-       </ul>
-   
-      
+ 
+        <ul>
+          <h2>Filter</h2>
+        {
+         /*Filtred Names */
+        filteredNames.map(filteredName => (
+        <li key={filteredName}>{filteredName}</li>
+        ))}
+        </ul>
      
     </>
   )
