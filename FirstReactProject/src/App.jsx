@@ -91,6 +91,10 @@ const crt=["d","d","a","e","a","e","c","s","c","e","f","m","s","f"]
     return accumulator;
   }, {});  
 
+  const concat = crt.reduce((accumulator, currentValue) => {
+    return accumulator .concat(currentValue);
+  }, "");   
+
 
   return (
     <>
@@ -152,7 +156,8 @@ const crt=["d","d","a","e","a","e","c","s","c","e","f","m","s","f"]
             {element}: {count}
           </li>
         ))}
-        
+
+        <span><b>concatenated caracters:</b> {concat} </span>
           
         </ul>
 
