@@ -10,7 +10,7 @@ function App() {
     greeting:"Hey",
     title:"React",
   }
-const numbers=[1,2,3,4,5]
+const numbers=[0,-2,-7,8,-8,1,2,3,4,5]
 
 const names=["Ghada","Aya","Salah","Amine","Jack","Emilie"]
 const carcters=["d","a","a","e","a","e"]
@@ -36,6 +36,8 @@ const carcters=["d","a","a","e","a","e"]
     return title;
   }
   const filteredNames = names.filter(name => name.length < 4);
+
+  const PositiveNumbers = numbers.filter(nmbr => nmbr>= 0);
   
   return (
     <>
@@ -57,12 +59,26 @@ const carcters=["d","a","a","e","a","e"]
  
         <ul>
           <h2>Filter</h2>
+          <h3>Names</h3>
+        <li>
         {
          /*Filtred Names */
         filteredNames.map(filteredName => (
         <li key={filteredName}>{filteredName}</li>
         ))}
+        </li>
+
+        <li>
+          <h3>Numbers</h3>
+        {
+         /*Filtred Numbers */
+         PositiveNumbers.map(filteredNumber => (
+        <li key={filteredNumber}>{filteredNumber}</li>
+        ))}
+        </li>
         </ul>
+
+
      
     </>
   )
