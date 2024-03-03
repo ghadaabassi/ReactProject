@@ -10,7 +10,7 @@ function App() {
     greeting:"Hey",
     title:"React",
   }
-const numbers=[0,-2,-7,8,-8,1,2,3,4,5]
+const numbers=[5,-2,-7,1,2,3,4,5]
 
 const names=["Ghada","Aya","Salah","Amine","Jack","Emilie"]
 const carcters=["d","a","a","e","a","e"]
@@ -61,18 +61,25 @@ const carcters=["d","a","a","e","a","e"]
     },
       ]
 
-//Functions
+//****** Functions
   function getTitle(title){
     return title;
   }
 
-// Filters
+//****** Filters
 
   const filteredNames = names.filter(name => name.length < 4);
   const PositiveNumbers = numbers.filter(nmbr => nmbr>= 0);
   const filtredStudents = students.filter(gr => gr.grade>= 15);
-  
 
+//****** Reduce  
+  const sum = numbers.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+  }, 0);
+
+  const product = numbers.reduce((accumulator, currentValue) => {
+    return accumulator * currentValue;
+  }, 1);  
 
   return (
     <>
@@ -121,7 +128,12 @@ const carcters=["d","a","a","e","a","e"]
         ))}
         </li>
         </ul>
-
+        <ul>
+          <h2>Reduce</h2>
+          <span>Somme de nombres {sum}</span><br/>
+          <span>Produit de nombres {product}</span>
+          
+        </ul>
 
      
     </>
