@@ -1,4 +1,4 @@
-function Reduce(){
+const Reduce=()=>{
 
     const numbers=[5,-2,-3,1,2,3,4,6]
     const crt=["d","d","a","e","a","e","c","s","c","e","f","m","s","f"]
