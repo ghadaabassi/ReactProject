@@ -3,8 +3,12 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+import Filter from './Filter.jsx'
+import Reduce from './Reduce.jsx'
+
 const title="React";
 function App() {
+
   const [count, setCount] = useState(0)
   const welcome={
     greeting:"Hey",
@@ -66,34 +70,6 @@ const crt=["d","d","a","e","a","e","c","s","c","e","f","m","s","f"]
     return title;
   }
 
-//****** Filters
-
-  const filteredNames = names.filter(name => name.length < 4);
-  const PositiveNumbers = numbers.filter(nmbr => nmbr>= 0);
-  const filtredStudents = students.filter(gr => gr.grade>= 15);
-
-//****** Reduce  
-  const sum = numbers.reduce((accumulator, currentValue) => {
-    return accumulator + currentValue;
-  }, 0);
-
-  const product = numbers.reduce((accumulator, currentValue) => {
-    return accumulator * currentValue;
-  }, 1);  
-
-  const occ= crt.reduce((accumulator, currentValue) => {
-    if(accumulator[currentValue]){
-      accumulator[currentValue]++;
-    }
-    else{
-      accumulator[currentValue]=1;
-    }
-    return accumulator;
-  }, {});  
-
-  const concat = crt.reduce((accumulator, currentValue) => {
-    return accumulator .concat(currentValue);
-  }, "");   
 
 
   return (
@@ -113,57 +89,20 @@ const crt=["d","d","a","e","a","e","c","s","c","e","f","m","s","f"]
           </li> })
         }
        </ul>
- 
-        <ul>
-          <h2>Filter</h2>
-          <h3>Names</h3>
-        <li>
-        {
-         /*Filtred Names */
-        filteredNames.map(filteredName => (
-        <li key={filteredName}>{filteredName}</li>
-        ))}
-        </li>
-
-        <li>
-          <h3>Numbers</h3>
-        {
-         /*Filtred Numbers */
-         PositiveNumbers.map(filteredNumber => (
-        <li key={filteredNumber}>{filteredNumber}</li>
-        ))}
-        </li>
-
-        <li>
-          <h3>students</h3>
-        {
-         /*Filtred Students */
-         filtredStudents.map(std => (
-        <li key={std.id}>{std.name}</li>
-        ))}
-        </li>
-        </ul>
-        <ul>
-          <h2>Reduce</h2>
-          <span>Somme de nombres {sum}</span><br/>
-          <span>Produit de nombres {product}</span>
+        
+        <Filter/>
+        <Reduce/>
 
 
-          <h3>Occurence</h3>        
-         {/*Reduce Occurence*/
-        Object.entries(occ).map(([element, count]) => (
-          <li key={element}>
-            {element}: {count}
-          </li>
-        ))}
-
-        <span><b>concatenated caracters:</b> {concat} </span>
-          
-        </ul>
-
-     
     </>
   )
 }
+
+
+
+
+
+
+
 
 export default App
