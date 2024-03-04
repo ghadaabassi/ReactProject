@@ -1,10 +1,13 @@
+import { useState } from 'react'
+
+
 function Search(){
 //****** Functions
 const getTitle=(title)=>(title)
+const [value,setValue]=useState('');
 
 const handleChange=(evt)=>{
-
-    console.log(evt.target.value);
+    setValue(evt.target.value);
 }
 
   return(
@@ -12,7 +15,8 @@ const handleChange=(evt)=>{
   <ul>
   <h1>React {getTitle("Project")}</h1>
       <label htmlFor='title'>Write Something here :</label>
-      <input id='title' type='text'  onChange={handleChange} />  
+      <input id='title' type='text'  onChange={handleChange} /> 
+      <p>Searching : {value} </p> 
   </ul>        
   </>
   )}
