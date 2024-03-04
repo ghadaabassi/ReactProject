@@ -30,9 +30,7 @@ objectID:1,
 ]
 
 //****** Functions
-function getTitle(title){
-  return title;
-}
+const getTitle=(title)=>(title)
 
 const  App=()=>(
     <>
