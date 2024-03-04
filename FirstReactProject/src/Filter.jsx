@@ -37,14 +37,11 @@ const Filter=()=>{
   const PositiveNumbers = numbers.filter(nmbr => nmbr>= 0);
   const filtredStudents = students.filter(gr => gr.grade>= 15);
   
-  
   return(
   <>
-  
   <ul>
               <h2>Filter</h2>
               <h3>Names</h3>
-          
             {
              /*Filtred Names */
             filteredNames.map(filteredName => (
