@@ -7,15 +7,9 @@ import Filter from './Filter.jsx'
 import Reduce from './Reduce.jsx'
 import Search from './Search.jsx'
 
-const title="React";
-const welcome={
-  greeting:"Hey",
-  title:"React",
-}
-
-
 
 const  App=()=>{
+
   const list=[
     {
     title:"React",
@@ -52,29 +46,23 @@ const List=(props)=>{
          /*Mapping */
         props.list.map((item) => 
       (
-         <Item  key={item.objectID} item={item} /> 
-
+         <Item  key={item.objectID} item={item} />
       ))}
      </ul>
     )
   }
 
-
   const Item=(props)=>{
-
     return(
       <ul>
         <li>
         <span>
-          <a href={props.item.url}>{props.item.title}</a>
+          <a href={props.item.url}><b>{props.item.title}</b></a>
         </span><br/>
         <span><b>Points:  </b>{props.item.points}</span></li> 
      </ul>
     )
   }  
 
-
-
-  
 
 export default App
