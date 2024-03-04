@@ -14,10 +14,7 @@ function App() {
     greeting:"Hey",
     title:"React",
   }
-const numbers=[5,-2,-3,1,2,3,4,6]
 
-const names=["Ghada","Aya","Salah","Amine","Jack","Emilie"]
-const crt=["d","d","a","e","a","e","c","s","c","e","f","m","s","f"]
 
   const list=[
 {
@@ -35,35 +32,6 @@ const crt=["d","d","a","e","a","e","c","s","c","e","f","m","s","f"]
   objectID:1,
 }
   ]
-
-
-  const students=[
-    {
-      id:0,
-      name:"stud1",
-      grade:3,
-    },
-    {
-      id:1,
-      name:"stud2",
-      grade:13,
-    },
-    {
-      id:2,
-      name:"stud3",
-      grade:17,
-    },
-    {
-      id:3,
-      name:"stud4",
-      grade:20,
-    },
-    {
-      id:4,
-      name:"stud4",
-      grade:12,
-    },
-      ]
 
 //****** Functions
   function getTitle(title){
