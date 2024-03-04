@@ -44,14 +44,12 @@ const Filter=()=>{
   <ul>
               <h2>Filter</h2>
               <h3>Names</h3>
-            <li>
+          
             {
              /*Filtred Names */
             filteredNames.map(filteredName => (
             <li key={filteredName}>{filteredName}</li>
             ))}
-            </li>
-    
            
               <h3>Numbers</h3>
             {
@@ -67,8 +65,7 @@ const Filter=()=>{
             <li key={std.id}>{std.name}</li>
             ))}
            
-            </ul>
-            
+            </ul>       
   </>
   )}
   

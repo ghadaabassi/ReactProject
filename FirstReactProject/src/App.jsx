@@ -31,9 +31,6 @@ objectID:1,
 ]
 
 
-
-
-
 const  App=()=>(
     <>
 <Search/>
