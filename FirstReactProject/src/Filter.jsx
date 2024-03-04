@@ -33,14 +33,12 @@ function Filter(){
   
   
   //****** Filters
-  
   const filteredNames = names.filter(name => name.length < 4);
   const PositiveNumbers = numbers.filter(nmbr => nmbr>= 0);
   const filtredStudents = students.filter(gr => gr.grade>= 15);
   
   
   return(
-  
   <>
   
   <ul>
