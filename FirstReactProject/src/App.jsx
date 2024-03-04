@@ -34,7 +34,6 @@ const  App=()=>{
     ]
     
 return(
-  
     <>
         <Search/>
         <List list={list}/> 
@@ -51,16 +50,31 @@ const List=(props)=>{
       <h2>Mapping</h2>
       {
          /*Mapping */
-        props.list.map(function (item) {return <li key={item.objectID}>{item.title}
-        <span><br/>
-          <a href={item.url}>{item.title}</a>
-        </span><br/>
-        <span><b>Points:  </b>{item.points}</span>
-        </li> })
-      }
+        props.list.map((item) => 
+      (
+         <Item  key={item.objectID} item={item} /> 
+
+      ))}
      </ul>
     )
   }
+
+
+  const Item=(props)=>{
+
+    return(
+      <ul>
+        <li>
+        <span>
+          <a href={props.item.url}>{props.item.title}</a>
+        </span><br/>
+        <span><b>Points:  </b>{props.item.points}</span></li> 
+     </ul>
+    )
+  }  
+
+
+
   
 
 export default App
