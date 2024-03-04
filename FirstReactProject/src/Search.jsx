@@ -1,6 +1,5 @@
 import { useState } from 'react'
 
-
 function Search(){
 //****** Functions
 const getTitle=(title)=>(title)
@@ -9,7 +8,6 @@ const [value,setValue]=useState('');
 const handleChange=(evt)=>{
     setValue(evt.target.value);
 }
-
   return(
   <>
   <ul>

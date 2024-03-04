@@ -1,6 +1,4 @@
-import { useState } from 'react'
 import './App.css'
-
 import Filter from './Filter.jsx'
 import Reduce from './Reduce.jsx'
 import Search from './Search.jsx'
