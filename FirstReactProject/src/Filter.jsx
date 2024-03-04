@@ -52,32 +52,24 @@ function Filter(){
             ))}
             </li>
     
-            <li>
+           
               <h3>Numbers</h3>
             {
              /*Filtred Numbers */
              PositiveNumbers.map(filteredNumber => (
             <li key={filteredNumber}>{filteredNumber}</li>
             ))}
-            </li>
-    
-            <li>
+           
               <h3>students</h3>
             {
              /*Filtred Students */
              filtredStudents.map(std => (
             <li key={std.id}>{std.name}</li>
             ))}
-            </li>
+           
             </ul>
             
-    
-  
   </>
-  
-  )  
-    }
-    
-  
+  )}
   
     export default Filter  

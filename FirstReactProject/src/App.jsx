@@ -15,7 +15,6 @@ function App() {
     title:"React",
   }
 
-
   const list=[
 {
   title:"React",
@@ -38,8 +37,6 @@ function App() {
     return title;
   }
 
-
-
   return (
     <>
       <h1>React {getTitle("Project")}</h1>
@@ -60,7 +57,6 @@ function App() {
         
         <Filter/>
         <Reduce/>
-
 
     </>
   )
