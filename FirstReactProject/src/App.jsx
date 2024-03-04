@@ -5,6 +5,7 @@ import './App.css'
 
 import Filter from './Filter.jsx'
 import Reduce from './Reduce.jsx'
+import Search from './Search.jsx'
 
 const title="React";
 const welcome={
@@ -29,14 +30,14 @@ objectID:1,
 }
 ]
 
-//****** Functions
-const getTitle=(title)=>(title)
+
+
+
 
 const  App=()=>(
     <>
-      <h1>React {getTitle("Project")}</h1>
-      <label htmlFor='title'>Write Somthing here :</label>
-      <input id='title' type='text'/>
+<Search/>
+       
        <ul>
         <h2>Mapping</h2>
         {
