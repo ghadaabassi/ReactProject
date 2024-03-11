@@ -43,7 +43,6 @@ localStorage.setItem('search',searchTerm);
 
 const handleSearch=(event)=>{
   setsearchTerm(event.target.value);
-  localStorage.setItem('search',event.target.value);
 }
 
 const searchedList=list.filter((l)=>
