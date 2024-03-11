@@ -1,8 +1,6 @@
-import { useState } from 'react'
 
-const getTitle=(title)=>(title)
 const  Search=({Onsearch,searchTerm})=>{
-
+  const getTitle=(title)=>(title)
   return(
   <>
   <ul>
