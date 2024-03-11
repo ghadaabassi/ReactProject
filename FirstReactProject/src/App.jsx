@@ -2,6 +2,7 @@ import './App.css'
 import Filter from './Filter.jsx'
 import Reduce from './Reduce.jsx'
 import Search from './Search.jsx'
+import { useState } from 'react'
 
 
 const  App=()=>{
@@ -22,11 +23,21 @@ const  App=()=>{
     objectID:1,
     }
     ]
+const [searchTerm,setSearchTerm]= useState('');
+
+const handleSearch=(event)=>{
+  setSearchTerm(event.target.value);
+}
+
+const searchedList=list.filter((l)=>
+ l.title.toLowerCase().includes(searchTerm.toLowerCase())
+);
+
     
 return(
     <>
-        <Search/>
-        <List list={list}/> 
+        <Search onSearch={handleSearch} searchTerm={searchTerm} />
+        <List list={searchedList}/> 
         <Filter/>
         <Reduce/>
     </>

@@ -41,14 +41,14 @@ const Filter=()=>{
   <>
   <ul>
               <h2>Filter</h2>
-              <h3>Names</h3>
+              <h4>Names</h4>
             {
              /*Filtred Names */
             filteredNames.map(filteredName => (
             <li key={filteredName}>{filteredName}</li>
             ))}
            
-              <h3>Numbers</h3>
+              <h4>Numbers</h4>
             {
              /*Filtred Numbers */
              PositiveNumbers.map(filteredNumber => (
