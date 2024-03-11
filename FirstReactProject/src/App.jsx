@@ -21,7 +21,14 @@ const  App=()=>{
     num_coments:2,
     points:5,
     objectID:1,
-    }
+    },
+    {
+      title:"Java",
+      url:"https://www.java.com/fr/",
+      num_coments:4,
+      points:6,
+      objectID:2,
+      }
     ]
 const [searchTerm,setSearchTerm]= useState('');
 
@@ -32,14 +39,12 @@ const handleSearch=(event)=>{
 const searchedList=list.filter((l)=>
  l.title.toLowerCase().includes(searchTerm.toLowerCase())
 );
-
     
 return(
     <>
         <Search onSearch={handleSearch} searchTerm={searchTerm} />
+        <h2>Searching</h2>
         <List list={searchedList}/> 
-        <Filter/>
-        <Reduce/>
     </>
   )
 }
@@ -48,7 +53,6 @@ const List=(props)=>{
 
     return(
       <ul>
-      <h2>Mapping</h2>
       {
          /*Mapping */
         props.list.map((item) => 
@@ -65,7 +69,7 @@ const List=(props)=>{
         <span>
           <a href={props.item.url}><b>{props.item.title}</b></a>
         </span><br/>
-        <span><b>Points:  </b>{props.item.points}</span></li> 
+        <span><b>Points: </b>{props.item.points}</span></li> 
      </ul>
     )
   }  
