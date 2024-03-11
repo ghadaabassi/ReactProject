@@ -30,7 +30,8 @@ const  App=()=>{
       objectID:2,
       }
     ]
-const [searchTerm,setSearchTerm]= useState('');
+
+const [searchTerm,setSearchTerm]= useState('React');
 
 const handleSearch=(event)=>{
   setSearchTerm(event.target.value);
@@ -39,6 +40,7 @@ const handleSearch=(event)=>{
 const searchedList=list.filter((l)=>
  l.title.toLowerCase().includes(searchTerm.toLowerCase())
 );
+
     
 return(
     <>
