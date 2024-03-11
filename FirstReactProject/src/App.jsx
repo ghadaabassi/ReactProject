@@ -2,7 +2,7 @@ import './App.css'
 import Filter from './Filter.jsx'
 import Reduce from './Reduce.jsx'
 import Search from './Search.jsx'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 
 
 const  App=()=>{
@@ -31,10 +31,18 @@ const  App=()=>{
       }
     ]
 
-const [searchTerm,setSearchTerm]= useState(localStorage.getItem('search')||'React');
+const [searchTerm,setsearchTerm]= useState(localStorage.getItem('search')||'React');
+
+useEffect(()=>
+{
+localStorage.setItem('search',searchTerm);
+},[searchTerm]
+)
+
+
 
 const handleSearch=(event)=>{
-  setSearchTerm(event.target.value);
+  setsearchTerm(event.target.value);
   localStorage.setItem('search',event.target.value);
 }
 

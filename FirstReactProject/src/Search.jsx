@@ -8,7 +8,6 @@ const  Search=({Onsearch,searchTerm})=>{
       <label htmlFor='title'>Write Something here :</label>
       <input id='title' type='text'  onChange={Onsearch} /> 
       <p>Searching : {searchTerm} </p> 
-
   </ul>        
   </>
   )}
