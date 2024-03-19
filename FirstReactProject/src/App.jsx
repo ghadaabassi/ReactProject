@@ -1,6 +1,4 @@
 import './App.css'
-import Filter from './Filter.jsx'
-import Reduce from './Reduce.jsx'
 import Search from './Search.jsx'
 import { useState,useEffect } from 'react'
 
@@ -39,10 +37,10 @@ localStorage.setItem('search',searchTerm);
 },[searchTerm]
 )
 
-
-
 const handleSearch=(event)=>{
   setsearchTerm(event.target.value);
+  console.log("Target: "+event.target.value);
+  console.log("search:"+searchTerm);
 }
 
 const searchedList=list.filter((l)=>
