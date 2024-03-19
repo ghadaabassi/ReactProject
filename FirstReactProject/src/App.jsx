@@ -1,5 +1,5 @@
 import './App.css'
-import Search from './Search.jsx'
+import Search from './Componenets/Search.jsx'
 import { useState,useEffect } from 'react'
 
 
