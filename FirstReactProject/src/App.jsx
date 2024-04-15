@@ -47,10 +47,21 @@ const searchedList=list.filter((l)=>
  l.title.toLowerCase().includes(searchTerm.toLowerCase())
 );
 
-    
+    /* <Search onSearch={handleSearch} searchTerm={searchTerm} />*/
 return(
     <>
-        <Search onSearch={handleSearch} searchTerm={searchTerm} />
+    
+       
+        <InputWithLabel
+        id="search"
+        value={searchTerm}
+        onInputChange={handleSearch}
+        >
+        <strong>Search:</strong>
+        </InputWithLabel>
+
+
+       <p>Searching : {searchTerm} </p> 
         <h2>Searching</h2>
         <List list={searchedList}/> 
     </>
@@ -66,6 +77,7 @@ const List=(props)=>{
         props.list.map((item) => 
       (
          <Item  key={item.objectID} item={item} />
+         
       ))}
      </ul>
 )}
@@ -81,6 +93,71 @@ const List=(props)=>{
      </ul>
     )
   }  
+
+
+
+
+/*
+  const InputWithLabel = ({ 
+    id, 
+   label,
+    value, 
+    onInputChange
+    }) => (
+    <>
+    <label htmlFor={id}>{label}</label>
+    &nbsp;
+    <input
+    id={id}
+    type="text"
+    value={value}
+    onChange={onInputChange}
+    />
+    </>
+   );
+*/
+
+/*
+const InputWithLabel = ({ 
+ id, 
+ label, 
+ value,
+ type = 'text', 
+ onInputChange
+ }) => (
+ <>
+ <label htmlFor={id}>{label}</label>
+ &nbsp;
+ <input
+ id={id}
+ type={type} 
+ value={value}
+ onChange={onInputChange}
+ 
+ />
+ </>
+);*/
+
+
+const InputWithLabel = ({ 
+  id, 
+  value,
+  type = 'text', 
+  onInputChange,
+ children,
+  }) => (
+  <>
+  <label htmlFor={id}>{children}</label>
+  &nbsp;
+  <input
+  id={id}
+  type={type} 
+  value={value}
+  onChange={onInputChange}
+  />
+  </>
+ );
+ 
 
 
 export default App
