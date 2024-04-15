@@ -26,10 +26,48 @@ const  App=()=>{
       num_coments:4,
       points:6,
       objectID:2,
-      }
-    ]
+      },
+
+    /*  {
+        
+        title:"Json",
+        url:"https://www.java.com/fr/",
+        num_coments:4,
+        points:6,
+        objectID:3,
+        },
+        {
+        title:"Flutter",
+          url:"https://www",
+          num_coments:4,
+          points:6,
+          objectID:4,
+          },
+          {
+            title:"SpringBoot",
+            url:"https://www",
+            num_coments:4,
+            points:9,
+            objectID:5,
+          },
+          {
+            title:"JSX",
+            url:"https:",
+            num_coments:4,
+            points:4,
+            objectID:6,
+            }
+*/ ]
 
 const [searchTerm,setsearchTerm]= useState(localStorage.getItem('search')||'React');
+const [stories, setStories] = useState(list);
+
+const handleRemoveStory = (item) => {
+  const newStories = stories.filter(
+  (story) => item.objectID !== story.objectID
+  );
+  setStories(newStories);
+  };
 
 useEffect(()=>
 {
@@ -46,12 +84,9 @@ const handleSearch=(event)=>{
 const searchedList=list.filter((l)=>
  l.title.toLowerCase().includes(searchTerm.toLowerCase())
 );
-
     /* <Search onSearch={handleSearch} searchTerm={searchTerm} />*/
 return(
     <>
-    
-       
         <InputWithLabel
         id="search"
         value={searchTerm}
@@ -59,42 +94,51 @@ return(
         >
         <strong>Search:</strong>
         </InputWithLabel>
-
-
        <p>Searching : {searchTerm} </p> 
         <h2>Searching</h2>
         <List list={searchedList}/> 
+        <List list={searchedList} onRemoveItem={handleRemoveStory} />
     </>
   )
 }
 
-const List=(props)=>{
+const List = ({ list, onRemoveItem }) => (
+  <ul>
+  {list.map((item) => (
+  <Item
+  key={item.objectID}
+  item={item}
+  onRemoveItem={onRemoveItem}
+  />
+  ))}
+  </ul>
+ );
 
-    return(
-      <ul>
-      {
-         /*Mapping */
-        props.list.map((item) => 
-      (
-         <Item  key={item.objectID} item={item} />
-         
-      ))}
-     </ul>
-)}
-
-  const Item=(props)=>{
-    return(
-      <ul>
-        <li>
-        <span>
-          <a href={props.item.url}><b>{props.item.title}</b></a>
-        </span><br/>
-        <span><b>Points: </b>{props.item.points}</span></li> 
-     </ul>
-    )
-  }  
-
-
+ const Item = ({ item, onRemoveItem }) => {
+  const handleRemoveItem = () => {
+   onRemoveItem(item);
+  };
+  return (
+   <li>
+   <span>
+   <a href={item.url}>{item.title}</a>
+   </span>
+   <span>{item.author}</span>
+   <span>{item.num_comments}</span>
+   <span>{item.points}</span>
+   <span>
+   <button 
+    type='button'
+    onClick={() => {
+    onRemoveItem(item);
+    }}
+    >  
+   Dismiss
+   </button>
+   </span>
+  </li>);
+  };
+   
 
 
 /*
@@ -133,11 +177,9 @@ const InputWithLabel = ({
  type={type} 
  value={value}
  onChange={onInputChange}
- 
  />
  </>
 );*/
-
 
 const InputWithLabel = ({ 
   id, 
@@ -157,7 +199,6 @@ const InputWithLabel = ({
   />
   </>
  );
- 
 
 
 export default App
