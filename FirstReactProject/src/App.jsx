@@ -26,9 +26,8 @@ const list=[
     },
  ];
 
- 
-const  App=()=>{
 
+const  App=()=>{
 
 
 const [searchTerm,setsearchTerm]= useState(localStorage.getItem('search') || 'React');
