@@ -7,7 +7,8 @@ const  Search=({onSearch,searchTerm})=>{
   <h1>React {getTitle("Project")}</h1>
       <label htmlFor='title'>Write Something here :</label>
       <input id='title' type='text'  onChange={onSearch} /> 
-      <p>Searching : {searchTerm} </p> 
+     { <p>Searching : {searchTerm} </p>
+      }
   </ul>        
   </>
   )}
